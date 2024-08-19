@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    < class="colors">
-        <!-- Color 0-->
+    <div class="colors">
+      <!-- Color 0-->
       <div class="color">
         <h2>Hex</h2>
         <div class="controls">
@@ -52,10 +52,10 @@
             class="sat-input"
             data-sat="0"
           />
-          </div>
         </div>
-        <!-- Color 1-->
-           <div class="color">
+      </div>
+      <!-- Color 1-->
+      <div class="color">
         <h2>Hex</h2>
         <div class="controls">
           <button class="adjust"><i class="fas fa-sliders-h"></i></button>
@@ -93,10 +93,10 @@
             class="sat-input"
             data-sat="1"
           />
-          </div>
         </div>
-        <!-- Color 2-->
-           <div class="color">
+      </div>
+      <!-- Color 2-->
+      <div class="color">
         <h2>Hex</h2>
         <div class="controls">
           <button class="adjust"><i class="fas fa-sliders-h"></i></button>
@@ -134,10 +134,10 @@
             class="sat-input"
             data-sat="2"
           />
-          </div>
         </div>
+      </div>
       <!-- color 3-->
-          <div class="color">
+      <div class="color">
         <h2>Hex</h2>
         <div class="controls">
           <button class="adjust"><i class="fas fa-sliders-h"></i></button>
@@ -175,10 +175,10 @@
             class="sat-input"
             data-sat="3"
           />
-          </div>
         </div>
-        <!-- Color 4-->
-            <div class="color">
+      </div>
+      <!-- Color 4-->
+      <div class="color">
         <h2>Hex</h2>
         <div class="controls">
           <button class="adjust"><i class="fas fa-sliders-h"></i></button>
@@ -207,60 +207,54 @@
             data-bright="4"
           />
           <span>Saturation</span>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            name="saturation"
-            class="sat-input"
-            data-sat=4"
-          />
-          </div>
+          <input type="range" min="0" max="1" step="0.01" name="saturation"
+          class="sat-input" data-sat=4" />
         </div>
+      </div>
     </div>
     <!-- Popup Panels -->
-     <div class="panel">
+    <div class="panel">
       <!-- Library Panel-->
       <div class="library-panel">
         <button class="library"><i class="fas fa-book-open"></i></button>
         <p>Library</p>
       </div>
       <!-- Generate Panel-->
-       <div class="generate-panel">
-        <button class="generate"> <i class="fas fa-sync"></i></button>
+      <div class="generate-panel">
+        <button class="generate"><i class="fas fa-sync"></i></button>
         <p>Generate</p>
-       </div>
-       <!-- Save Panel-->
-        <div class="save-panel">
-          <button class="generate"><i class="fas fa-save"></i>
-          </button>
-          <p>Save</p>
-        </div>
-     </div>
-     <!-- Copy Container -->
-      <div class="copy-container">
-        <div class="copy-popup">
-          <h3>Copied to clipboard!</h3>
-          <h4>&#128077;</h4>
-        </div>
       </div>
-      <!-- Save Container-->
-       <div class="save-container">
-        <div class="save-popup">
-          <button class="close-save">X</button>
-          <h4>Give a name to your palette</h4>
-          <input type="text" maxlength="35" class="save-name">
-          <button type="submit" class="submit-save">Save</button>
-        </div>
-       </div>
-       <!-- Library Container-->
-        <div class="library-container">
-          <div class="library-popup">
-            <button class="close-library">X</button>
-            <h4>Pick your palette</h4>
-          </div>
-        </div>
+      <!-- Save Panel-->
+      <div class="save-panel">
+        <button class="generate"><i class="fas fa-save"></i></button>
+        <p>Save</p>
+      </div>
+    </div>
+    <!-- Copy Container -->
+    <div class="copy-container">
+      <div class="copy-popup">
+        <h3>Copied to clipboard!</h3>
+        <h4>&#128077;</h4>
+      </div>
+    </div>
+    <!-- Save Container-->
+    <div class="save-container">
+      <div class="save-popup">
+        <button class="close-save">X</button>
+        <h4>Give a name to your palette</h4>
+        <input type="text" maxlength="35" class="save-name" />
+        <button type="submit" class="submit-save">Save</button>
+      </div>
+    </div>
+    <!-- Library Container-->
+    <div class="library-container">
+      <div class="library-popup">
+        <button class="close-library">X</button>
+        <h4>Pick your palette</h4>
+      </div>
+    </div>
+
+    <!-- Scripts-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
       integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
