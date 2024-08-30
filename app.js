@@ -5,10 +5,12 @@ const sliders = document.querySelectorAll('input[type="range"]');
 const currentHexes = document.querySelectorAll('.color h2');
 const popup = document.querySelector('.copy-container');
 const adjustButton = document.querySelectorAll('.adjust');
+const lockButton = document.querySelectorAll('.lock');
 const closeAdjustments = document.querySelectorAll('.close-adjustment');
 const sliderContainers = document.querySelectorAll('.sliders');
 
 //Add our Event Listeners
+generateBtn.addEventListener('click', randomColors);
 sliders.forEach((slider) => {
   slider.addEventListener('input', hslControls);
 });
@@ -40,7 +42,11 @@ closeAdjustments.forEach((button, index) => {
     closeAdjustmentPanel(index);
   });
 });
-
+lockButton.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    toggleLockButton(index);
+  });
+});
 //functions
 //color generator
 function generateHex() {
@@ -54,6 +60,12 @@ function randomColors() {
     const hexText = div.children[0];
     const randomColor = generateHex();
     // add it to the array
+    if (div.classList.contains('locked')) {
+      initialColors.push(hexText.innerText);
+      return;
+    } else {
+      initialColors.push(chroma(randomColor).hex());
+    }
     initialColors.push(chroma(randomColor).hex());
     // add color to background
     div.style.backgroundColor = randomColor;
@@ -71,6 +83,11 @@ function randomColors() {
   });
   //Reset inputs
   resetInputs();
+  //Check for button contrast
+  adjustButton.forEach((button, index) => {
+    checkTextContrast(initialColors[index], button);
+    checkTextContrast(initialColors[index], lockButton);
+  });
 }
 
 //Check if text is properly contrasted against background color
@@ -181,6 +198,13 @@ function openAdjustmentPanel(index) {
 }
 function closeAdjustmentPanel(index) {
   sliderContainers[index].classList.remove('active');
+}
+function toggleLockButton(index) {
+  const div = lockButton[index].parentElement.parentElement;
+  const icon = lockButton[index].firstChild;
+  icon.classList.toggle('fa-lock-open');
+  icon.classList.toggle('fa-lock');
+  div.classList.toggle('locked');
 }
 
 randomColors();
